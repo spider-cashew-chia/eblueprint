@@ -33,8 +33,8 @@ function Navbar() {
   return (
     <header className='flex justify-between py-6'>
       <ul className='flex gap-6 '>
-        {navLinks.map((item) => (
-          <li>
+        {navLinks.map((item, index) => (
+          <li key={index}>
             <Link href={item.link} className='text-xl'>
               {item.title}
             </Link>

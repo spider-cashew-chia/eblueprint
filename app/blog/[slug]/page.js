@@ -24,7 +24,12 @@ export default async function page({ params }) {
       <h1 className='text-2xl font-bold md:text-4xl'>{data.title}</h1>
       <p className='mb-6'>{data.date}</p>
       <div className='relative aspect-video'>
-        <Image src={urlFor(data.image).url()} fill className='rounded-lg' />
+        <Image
+          src={urlFor(data.image).url()}
+          alt={data.title}
+          fill
+          className='rounded-lg'
+        />
       </div>
       <div className='mt-8 prose max-w-none'>
         <PortableText value={data.details} />

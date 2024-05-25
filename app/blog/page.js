@@ -34,7 +34,7 @@ async function page() {
       {data.map((blog, index) => (
         <Card key={index}>
           <div className='relative aspect-video'>
-            <Image src={urlFor(blog.image).url()} fill />
+            <Image src={urlFor(blog.image).url()} alt={blog.title} fill />
           </div>
           <CardHeader>
             <CardTitle>{blog.title}</CardTitle>
