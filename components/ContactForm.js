@@ -15,7 +15,7 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 
 const formSchema = z.object({
-  emailAddress: z.string().email(),
+  email: z.string().email(),
   name: z.string(),
 });
 
@@ -35,11 +35,10 @@ function ContactForm() {
         email: values.email,
       });
       form.reset();
-      toast('Message received. I will contact you as soon as I can.');
+
     } catch (error) {
-      toast.error('Failed to send message. Please try again.');
+     console.error(error.message)
     }
-    console.log(values);
   }
 
   return (
@@ -70,7 +69,7 @@ function ContactForm() {
           {/* email */}
           <FormField
             control={form.control}
-            name='emailAddress'
+            name='email'
             render={({ field }) => {
               return (
                 <FormItem>
